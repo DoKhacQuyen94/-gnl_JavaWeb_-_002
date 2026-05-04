@@ -1,0 +1,29 @@
+cloudinary:
+    api-key: ${cloudinary.cloud.api-key}
+    api-secret: ${cloudinary.cloud.api-secret}
+    cloud-name: ${cloudinary.cloud.name}
+spring:
+    application:
+        name: dgnl_002
+    config:
+        import: classpath:application-dev.yml
+    datasource:
+        password: 09042006
+        url: jdbc:mysql://localhost:3306/device_management?createDatabaseIfNotExist=true
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQLDialect
+                format_sql: true
+                show_sql: true
+        show-sql: true
+    thymeleaf:
+        cache: false
+        prefix: classpath:/templates/
+        suffix: .html
